@@ -1,0 +1,14 @@
+<form [formGroup]="wishForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    About:
+    <input type="text" formControlName="about">
+  </label>
+
+  <label>
+    Price:
+    <input type="text" formControlName="price">
+  </label>
+
+  <button type="submit" [disabled]="!wishForm.valid">Create</button>
+</form>

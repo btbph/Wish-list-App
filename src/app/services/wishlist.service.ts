@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, observable, Observable} from 'rxjs';
 
 
 import { Wish } from '../models/wish';
@@ -15,11 +15,19 @@ export class WishlistService {
     { id: 3, price: 1000, image: 3 },
     { id: 4, price: 10000, image: 4 }
   ];
-
   private wishSubject: BehaviorSubject<Wish[]> = new BehaviorSubject<Wish[]>(this.wishes);
+
+  public id = this.wishes[this.wishes.length - 1].id + 1;
 
   getAllWishes(): BehaviorSubject<Wish[]> {
     return this.wishSubject;
+  }
+
+  getCurrentId(): Observable<number> {
+    return new Observable(observer => {
+      observer.next(this.wishes[this.wishes.length - 1].id + 1);
+      observer.complete();
+    });
   }
 
   getWish(wishId): Observable<Wish> {

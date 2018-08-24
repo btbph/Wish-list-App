@@ -10,11 +10,11 @@ import { Wish } from '../../models/wish';
   templateUrl: './detail-wish.component.html'
 })
 export class DetailWishComponent implements OnInit {
+  public currentWish: Wish;
+
   constructor(private wishService: WishlistService,
               private route: ActivatedRoute,
               private router: Router) {}
-
-  private currentWish: Wish;
 
   ngOnInit() {
     const id: number = +this.route.snapshot.paramMap.get('id');
