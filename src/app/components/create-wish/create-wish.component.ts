@@ -10,11 +10,12 @@ import { WishlistService } from '../../services/wishlist.service';
 })
 export class CreateWishComponent implements OnInit {
 
-  private image: number = Math.round(4 * Math.random() + 1);
+  private image: number = Math.floor(4 * Math.random() + 1);
   private id = 0;
 
   public wishForm = this.fb.group({
-    about: ['', Validators.maxLength(128)],
+    title: ['', Validators.maxLength(128)],
+    about: [''],
     price: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]*$')])],
   });
 
@@ -27,8 +28,8 @@ export class CreateWishComponent implements OnInit {
   }
 
   onSubmit() {
-    const { about, price } = this.wishForm.getRawValue();
-    this.wishListService.addWish({ id: this.id, about, price: +price, image: this.image });
+    const { about, price, title } = this.wishForm.getRawValue();
+    this.wishListService.addWish({ id: this.id, about, price: +price, image: this.image, title });
     this.router.navigate(['/all']);
   }
 }

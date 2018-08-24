@@ -1,0 +1,11 @@
+.wish-list {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+
+  .wish-item {
+    .wish-link {
+      text-decoration: none;
+    }
+  }
+}

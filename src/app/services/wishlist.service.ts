@@ -10,10 +10,10 @@ import { Wish } from '../models/wish';
 export class WishlistService {
 
   private wishes: Wish[] = [
-    { id: 1, price: 10, image: 1 },
-    { id: 2, price: 100, image: 2 },
-    { id: 3, price: 1000, image: 3 },
-    { id: 4, price: 10000, image: 4 }
+    { id: 1, price: 10, image: 1, title: 'title1' },
+    { id: 2, price: 100, image: 2, title: 'title2' },
+    { id: 3, price: 1000, image: 3, title: 'title3' },
+    { id: 4, price: 10000, image: 4, title: 'title4' }
   ];
   private wishSubject: BehaviorSubject<Wish[]> = new BehaviorSubject<Wish[]>(this.wishes);
 

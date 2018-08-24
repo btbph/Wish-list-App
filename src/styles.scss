@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.bg-wish {
+  background: url('./assets/css_sprites.png');
+}
+
+.bg-wish1 {
+  background-position: -10px -480px;
+  height: 168px;
+  width: 300px;
+}
+
+.bg-wish3 {
+  background-position: -630px -10px;
+  height: 280px;
+  width: 280px;
+}
+
+.bg-wish4 {
+  background-position: -10px -668px;
+  height: 225px;
+  width: 225px;
+}
+
+.bg-wish2 {
+  background-position: -10px -10px;
+  height: 450px;
+  width: 600px;
+}

@@ -1,3 +1,9 @@
+<div class="bg-wish"
+     [class.bg-wish1]="currentWish.image === 1"
+     [class.bg-wish2]="currentWish.image === 2"
+     [class.bg-wish3]="currentWish.image === 3"
+     [class.bg-wish4]="currentWish.image === 4"
+></div>
 <div>{{ currentWish.id }}</div>
 <div>{{ currentWish.about }}</div>
 <div>{{ currentWish.price }}</div>

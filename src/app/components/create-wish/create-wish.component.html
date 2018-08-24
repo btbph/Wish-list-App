@@ -1,8 +1,13 @@
 <form [formGroup]="wishForm" (ngSubmit)="onSubmit()">
 
   <label>
+    Title:
+    <input type="text" formControlName="title">
+  </label>
+
+  <label>
     About:
-    <input type="text" formControlName="about">
+    <input type="text" formControlName="about" placeholder="optional">
   </label>
 
   <label>
