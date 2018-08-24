@@ -4,12 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AllWishesComponent } from './components';
+import { AllWishesComponent, DetailWishComponent } from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllWishesComponent
+    AllWishesComponent,
+    DetailWishComponent
   ],
   imports: [
     BrowserModule,

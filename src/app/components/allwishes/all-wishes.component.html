@@ -1,6 +1,8 @@
 <ul>
   <li *ngFor="let wish of wishes">
-    <span>{{ wish.id }}  {{ wish.image }} {{ wish.about }} {{ wish.price }}</span>
+    <a routerLink="/detail/{{wish.id}}">
+      <span>{{ wish.image }} {{ wish.about }} {{ wish.price }}</span>
+    </a>
     <button (click)="deleteWish(wish.id)">Delete</button>
   </li>
 </ul>
