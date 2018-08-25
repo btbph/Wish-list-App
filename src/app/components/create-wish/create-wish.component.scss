@@ -1,0 +1,18 @@
+@import "~src/variables";
+
+.form {
+  margin: 0 auto;
+  padding: 30px;
+  background-color: $itemColor;
+  width: 300px;
+
+  .box {
+    border: 1px solid black;
+    padding: 3px
+  }
+
+  .submit-button {
+    margin: 0 auto;
+  }
+}
+

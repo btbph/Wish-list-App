@@ -1,19 +1,29 @@
-<form [formGroup]="wishForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="wishForm" (ngSubmit)="onSubmit()" class="form">
+  <p>
+    <label>
+      Title:
+      <input class="box" type="text" formControlName="title">
+    </label>
+  </p>
 
-  <label>
-    Title:
-    <input type="text" formControlName="title">
-  </label>
+  <p>
+    <label>
+      About:
+      <input class="box" type="text" formControlName="about" placeholder="optional">
+    </label>
+  </p>
 
-  <label>
-    About:
-    <input type="text" formControlName="about" placeholder="optional">
-  </label>
+  <p>
+    <label>
+      Price:
+      <input class="box" type="text" formControlName="price">
+    </label>
+  </p>
 
-  <label>
-    Price:
-    <input type="text" formControlName="price">
-  </label>
-
-  <button type="submit" [disabled]="!wishForm.valid">Create</button>
+  <button
+    class="submit-button"
+    type="submit"
+    [disabled]="!wishForm.valid">
+    Create
+  </button>
 </form>

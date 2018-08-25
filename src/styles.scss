@@ -1,5 +1,7 @@
+@import '~normalize.css';
+
 .bg-wish {
-  background: url('./assets/css_sprites.png');
+  background: url('./assets/css_sprites.png'); //bad sprite images sizes' should be the same
 }
 
 .bg-wish1 {

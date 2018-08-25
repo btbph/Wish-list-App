@@ -7,7 +7,8 @@ import { Wish } from '../../models/wish';
 
 @Component({
   selector: 'app-detail-wish',
-  templateUrl: './detail-wish.component.html'
+  templateUrl: './detail-wish.component.html',
+  styleUrls: ['./detail-wish.component.scss']
 })
 export class DetailWishComponent implements OnInit {
   public currentWish: Wish;
