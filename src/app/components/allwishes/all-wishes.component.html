@@ -1,10 +1,12 @@
-<ol class="wish-list">
+<ul class="wish-list">
   <li *ngFor="let wish of wishes"
-      class="wish-item">
-    <a routerLink="/detail/{{wish.id}}" class="wish-link">
-      <span>{{ wish.title }} {{ wish.about }} {{ wish.price }}</span>
-    </a>
-    <button (click)="deleteWish(wish.id)">Delete</button>
+      class="wish-item"
+      routerLink="/detail/{{wish.id}}">
+    <span class="wish-link">Title: {{ wish.title }} Price: {{ wish.price }}</span>
+    <button class="delete-button" (click)="deleteWish(wish.id)">Delete</button>
   </li>
-</ol>
-<a routerLink="/create">Create</a>
+  <li class="wish-item create-link"
+      routerLink="/create">
+    Create
+  </li>
+</ul>

@@ -1,11 +1,40 @@
+@import "~src/variables";
+
 .wish-list {
   display: block;
+  list-style-type: none;
   margin: 0 auto;
-  width: 300px;
+  width: 30%;
 
   .wish-item {
+    background-color: $itemColor;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    margin: 20px 0;
+    padding: 20px;
+    position: relative;
+
+    &:hover {
+      background-color: $hoverBgColor;
+    }
+
     .wish-link {
       text-decoration: none;
+    }
+  }
+
+  .create-link {
+    text-align: center;
+  }
+
+  .delete-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: $borderRadius;
+    float: right;
+
+    &:hover {
+      background-color: $hoverButton;
     }
   }
 }
