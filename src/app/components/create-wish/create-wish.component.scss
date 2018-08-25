@@ -1,14 +1,14 @@
-@import "~src/variables";
+@import '~src/variables';
 
 .form {
+  background-color: $item-color;
   margin: 0 auto;
   padding: 30px;
-  background-color: $itemColor;
   width: 300px;
 
   .box {
-    border: 1px solid black;
-    padding: 3px
+    border: 1px solid;
+    padding: 3px;
   }
 
   .submit-button {

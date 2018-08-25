@@ -1,21 +1,21 @@
-@import "~src/variables";
+@import '~src/variables';
 
 .wish-list {
   display: block;
   list-style-type: none;
   margin: 0 auto;
-  width: 30%;
+  width: 40%;
 
   .wish-item {
-    background-color: $itemColor;
-    border-radius: $borderRadius;
+    background-color: $item-color;
+    border-radius: $border-radius;
     cursor: pointer;
     margin: 20px 0;
     padding: 20px;
     position: relative;
 
     &:hover {
-      background-color: $hoverBgColor;
+      background-color: $hover-bg-color;
     }
 
     .wish-link {
@@ -30,11 +30,11 @@
   .delete-button {
     background-color: transparent;
     border: 0;
-    border-radius: $borderRadius;
+    border-radius: $border-radius;
     float: right;
 
     &:hover {
-      background-color: $hoverButton;
+      background-color: $hover-button;
     }
   }
 }
