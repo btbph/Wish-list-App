@@ -3,19 +3,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 
 import { Wish } from '../models/wish';
+import { SharedService } from './shared.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
+  private wishSubject: BehaviorSubject<Wish[]> = new BehaviorSubject<Wish[]>(this.sharedService.wishes);
 
-  private wishes: Wish[] = [
-    { id: 1, price: 10, image: 1, title: 'title1' },
-    { id: 2, price: 100, image: 2, title: 'title2' },
-    { id: 3, price: 1000, image: 3, title: 'title3' },
-    { id: 4, price: 10000, image: 4, title: 'title4' }
-  ];
-  private wishSubject: BehaviorSubject<Wish[]> = new BehaviorSubject<Wish[]>(this.wishes);
+  constructor(private sharedService: SharedService) {}
 
   getAllWishes(): BehaviorSubject<Wish[]> {
     return this.wishSubject;
@@ -23,25 +20,25 @@ export class WishlistService {
 
   getCurrentId(): Observable<number> {
     return new Observable(observer => {
-      observer.next(this.wishes[this.wishes.length - 1].id + 1);
+      observer.next(this.sharedService.wishes[this.sharedService.wishes.length - 1].id + 1);
       observer.complete();
     });
   }
 
   getWish(wishId): Observable<Wish> {
     return new Observable<Wish>(observer => {
-      observer.next(this.wishes.find(wish => wish.id === wishId));
+      observer.next(this.sharedService.wishes.find(wish => wish.id === wishId));
       observer.complete();
     });
   }
 
   addWish(wish: Wish): void {
-    this.wishes.push(wish);
-    this.wishSubject.next(this.wishes);
+    this.sharedService.wishes.push(wish);
+    this.wishSubject.next(this.sharedService.wishes);
   }
 
-  removeWish(wishId: number) {
-    this.wishes = this.wishes.filter(wish => wish.id !== wishId);
-    this.wishSubject.next(this.wishes);
+  removeWish(wishId: number): void {
+    this.sharedService.wishes = this.sharedService.wishes.filter(wish => wish.id !== wishId);
+    this.wishSubject.next(this.sharedService.wishes);
   }
 }

@@ -25,7 +25,7 @@ export class DetailWishComponent implements OnInit {
       .subscribe(res => this.currentWish = res);
   }
 
-  deleteWish() {
+  deleteWish(): void {
     this.wishService.removeWish(this.currentWish.id);
     this.router.navigate(['/all']);
   }

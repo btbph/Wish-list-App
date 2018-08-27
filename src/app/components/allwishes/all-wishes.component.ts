@@ -19,13 +19,17 @@ export class AllWishesComponent implements OnInit {
   constructor(private wishListService: WishlistService) {}
 
   ngOnInit() {
+    this.getAllWishes();
+  }
+
+  getAllWishes(): void {
     this
       .wishListService
       .getAllWishes()
       .subscribe(res => this.wishes = res);
   }
 
-  deleteWish(wishId: number) {
+  deleteWish(wishId: number): void {
     this.wishListService.removeWish(wishId);
   }
 }

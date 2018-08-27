@@ -24,14 +24,18 @@ export class CreateWishComponent implements OnInit {
               private wishListService: WishlistService,
               private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getIdOfWish();
+  }
+
+  getIdOfWish(): void {
     this
       .wishListService
       .getCurrentId()
       .subscribe(res => this.id = res);
   }
 
-  onSubmit() {
+  onSubmit(): void {
     const { about, price, title } = this.wishForm.getRawValue();
     this.wishListService.addWish({
       id: this.id,
