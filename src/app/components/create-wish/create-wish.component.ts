@@ -25,12 +25,21 @@ export class CreateWishComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-    this.wishListService.getCurrentId().subscribe(res => this.id = res);
+    this
+      .wishListService
+      .getCurrentId()
+      .subscribe(res => this.id = res);
   }
 
   onSubmit() {
     const { about, price, title } = this.wishForm.getRawValue();
-    this.wishListService.addWish({ id: this.id, about, price: +price, image: this.image, title });
+    this.wishListService.addWish({
+      id: this.id,
+      about,
+      price: +price,
+      image: this.image,
+      title
+    });
     this.router.navigate(['/all']);
   }
 }

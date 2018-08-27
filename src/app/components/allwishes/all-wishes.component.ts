@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 
 import { WishlistService } from '../../services/wishlist.service';
-
 import { Wish } from '../../models/wish';
 
 @Component({
@@ -15,9 +14,9 @@ import { Wish } from '../../models/wish';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AllWishesComponent implements OnInit {
-  constructor(private wishListService: WishlistService) {}
-
   public wishes: Wish[];
+
+  constructor(private wishListService: WishlistService) {}
 
   ngOnInit() {
     this
